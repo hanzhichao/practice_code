@@ -1,0 +1,9 @@
+{
+  "url": "http://www.niurenqushi.com/api/simsimi/",
+  "Content-Type": "text/json; charset=UTF-8",
+  "Cookie": {
+    "bdshare_firstime": "1517898846186",
+    "testapp": "s%3AZ34ZIeHOr2YufOl9C9yxSijJ8jimg0TN.viiKsa6qGKSQ6qA5YhUgqKi9uvvVQaXVvRpV%2F4pq%2BwA"
+  },
+  "data": "你好吗？"
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171205 19:06:28.361" generator="Robot 3.0.2 (Python 2.7.6 on win32)">
+<suite source="D:\Projects\test\金蝶接口测试\test_api.robot" id="s1" name="Test Api">
+<test id="s1-t1" name="test request">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+</arguments>
+<assign>
+<var>${headers}</var>
+</assign>
+<msg timestamp="20171205 19:06:28.456" level="INFO">${headers} = {u'Content-Type': u'application/x-www-form-urlencoded'}</msg>
+<status status="PASS" endtime="20171205 19:06:28.456" starttime="20171205 19:06:28.441"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>api</arg>
+<arg>http://192.168.100.238:8086/gateway/Synchronize/entrance</arg>
+<arg>${headers}</arg>
+</arguments>
+<msg timestamp="20171205 19:06:28.456" level="INFO">Creating Session using : alias=api, url=http://192.168.100.238:8086/gateway/Synchronize/entrance, headers={u'Content-Type': u'application/x-www-form-urlencoded'},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20171205 19:06:28.456" starttime="20171205 19:06:28.456"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>appCode=YjZhZTJiZDkxZmI5NjUwODE2MTlmYTVhZDQ4ZWY1NjA=&amp;timeCode=1511946653&amp;sFormId=approval&amp;sContent={"k3_id":"1234","k3_code":"cg123","status":"1","id":"25","code":"20171119002","detail":[{"operator":"张三","status":"2","remark":"同意"},{"operator":"张三","status":"2","remark":"同意"}]}</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20171205 19:06:28.456" level="INFO">${data} = appCode=YjZhZTJiZDkxZmI5NjUwODE2MTlmYTVhZDQ4ZWY1NjA=&amp;timeCode=1511946653&amp;sFormId=approval&amp;sContent={"k3_id":"1234","k3_code":"cg123","status":"1","id":"25","code":"20171119002","detail":[{"operator":"...</msg>
+<status status="PASS" endtime="20171205 19:06:28.456" starttime="20171205 19:06:28.456"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the</doc>
+<arguments>
+<arg>api</arg>
+<arg>post</arg>
+<arg>data=${data}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20171205 19:06:28.691" level="INFO">Post Request using : alias=api, uri=post, data=&lt;empty&gt;, headers=None, files=None, allow_redirects=True </msg>
+<msg timestamp="20171205 19:06:28.691" level="INFO">${res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20171205 19:06:28.691" starttime="20171205 19:06:28.456"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.json()}</arg>
+</arguments>
+<msg timestamp="20171205 19:06:28.691" level="INFO">{u'message': u'\u6210\u529f', u'code': 100000, u'data': u'10'}</msg>
+<status status="PASS" endtime="20171205 19:06:28.691" starttime="20171205 19:06:28.691"></status>
+</kw>
+<status status="PASS" endtime="20171205 19:06:28.691" critical="yes" starttime="20171205 19:06:28.441"></status>
+</test>
+<status status="PASS" endtime="20171205 19:06:28.691" starttime="20171205 19:06:28.361"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Test Api" pass="1">Test Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171206 14:32:25.217" generator="Robot 3.0.2 (Python 2.7.6 on win32)">
+<suite source="D:\Projects\test\robot\demo3.robot" id="s1" name="Demo3">
+<test id="s1-t1" name="Test User Keywords">
+<kw name="Print Msg" library="NewLibrary">
+<arguments>
+<arg>god</arg>
+</arguments>
+<msg timestamp="20171206 14:32:25.241" level="INFO">hello god</msg>
+<status status="PASS" endtime="20171206 14:32:25.241" starttime="20171206 14:32:25.241"></status>
+</kw>
+<kw name="Print Msg" library="NewLibrary">
+<arguments>
+<arg>ss</arg>
+</arguments>
+<msg timestamp="20171206 14:32:25.242" level="INFO">hello ss</msg>
+<status status="PASS" endtime="20171206 14:32:25.242" starttime="20171206 14:32:25.242"></status>
+</kw>
+<kw name="Join Info" library="NewLibrary">
+<arguments>
+<arg>1</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20171206 14:32:25.242" level="INFO">12</msg>
+<status status="PASS" endtime="20171206 14:32:25.243" starttime="20171206 14:32:25.242"></status>
+</kw>
+<status status="PASS" endtime="20171206 14:32:25.243" critical="yes" starttime="20171206 14:32:25.240"></status>
+</test>
+<status status="PASS" endtime="20171206 14:32:25.244" starttime="20171206 14:32:25.218"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Demo3" pass="1">Demo3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

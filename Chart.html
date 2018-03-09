@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://www.highcharts.com/highslide/highslide.css" rel="stylesheet" />
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/heatmap.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+    </head>
+    <body style="margin:0;padding:0">
+                <div id="container" style="">Loading....</div>
+
+
+    <script>
+        $(function(){
+
+
+
+
+
+            Highcharts.setOptions({"global": {}, "lang": {}});
+            var option = {"chart": {"renderTo": "container", "inverted": true}, "colors": {}, "credits": {"enabled": false}, "drilldown": {}, "exporting": {}, "labels": {}, "legend": {"enabled": false}, "loading": {}, "navigation": {}, "pane": {}, "plotOptions": {}, "series": {}, "subtitle": {"text": "\u54cd\u5e94\u65f6\u95f4/\u541e\u5410\u91cf/\u7ebf\u7a0b\u6570"}, "title": {"text": "LoadBoy \u63a5\u53e3\u8d1f\u8f7d\u56fe"}, "tooltip": {"headerFormat": "<b>{series.name}</b><br/>", "pointFormat": "{point.x} km: {point.y}\u00b0C"}, "xAxis": {"reversed": false, "title": {"enabled": true, "text": "\u54cd\u5e94\u65f6\u95f4"}, "labels": {"formatter": function () {                return this.value + " t/s";            }}, "maxPadding": 0.05, "showLastLabel": true}, "yAxis": {"title": {"text": "\u7ebf\u7a0b\u6570"}, "labels": {"formatter": function () {                return this.value + '';            }}, "lineWidth": 2}};
+
+
+ 
+
+            var chart = new Highcharts.Chart(option);
+
+            var data = [{"data": [[24.85, 6], [45.43, 11], [58.11, 15], [77.45, 20], [93.47, 24]], "type": "spline", "marker": {"enabled": false}, "name": "tps"}, {"data": [[0.24, 6], [0.24, 11], [0.25, 15], [0.25, 20], [0.25, 24]], "type": "line", "marker": {"enabled": false}, "name": "rt"}];
+            var dataLen = data.length;
+            for (var ix = 0; ix < dataLen; ix++) {
+                chart.addSeries(data[ix]);
+            }
+ 
+
+
+
+
+
+
+
+        
+    });
+        </script>
+
+    </body>
+</html>

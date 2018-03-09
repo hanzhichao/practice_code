@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>获取后端数据</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />       
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="imgItem in imgList">{{ imgItem.display_name }}</li>
+            </ul>
+        </div>       
+    </body>
+    <script src="./vue.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./vue-resource.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var demo=new Vue ({
+            el:'#app',
+            data: {
+                imgList:[],
+                getImgUrl: 'http:/127.0.0.1:8000/api/groups/'    //存数据接口               
+            },
+            created: function(){
+                this.getImg()              //定义方法
+            },
+            methods: {
+                getImg: function(){
+                    var that = this;      
+                    that.$http.get(
+                        this.getImgUrl
+                    ).then(function(response){  //接口返回数据
+                        this.imgList=response.data;
+                        console.log(response.data)                      
+                    },function(response){
+                        console.log(response)
+                    })
+                }
+            }
+        })
+    </script>
+</html>
