@@ -1,0 +1,3 @@
+define("tpl/media/id_card.html.js",[],function(){
+return'<div class="mediaBox bcardBox">\n    <div class="mediaContent">\n        <div class="bCard">\n            <div class="bCardHeader">名片</div>\n            <div class="bCardContent">\n                <img class="bCardAvatar" src="{avatar}" alt="{username}" title="{username}"/>\n                <div class="info">\n                    <p class="nickname">{nickname}</p>\n                    <p class="username">{username}</p>\n                </div>\n            </div>\n        </div>\n    </div>\n    <span class="iconArrow"></span>\n</div>\n';
+});

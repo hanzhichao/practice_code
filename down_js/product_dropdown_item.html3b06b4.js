@@ -1,0 +1,3 @@
+define("tpl/media/product_dropdown_item.html.js",[],function(){
+return'{each data as o index}\n<li class="js_dropdown_item_li dropdown_data_item {if o.className}{o.className}{/if}">\n  <a onclick="return false;" class="jsDropdownItem" href="javascript:void(0);" data-value="{o.value}" data-index="{index}" data-name="{o.name}">\n      {o.name}\n      {if loading_img}\n      <img style="display:none;" class="js_loading dropdown_item_loading" src="{loading_img}" alt="">\n      {/if}\n      <i {if o.canDel!==true}style="display:none;"{/if} class="js_del icon14_common del_gray dropdown_item_del" data-value="{o.value}" data-index="{index}" data-name="{o.name}"></i>\n  </a>\n</li>\n{/each}';
+});

@@ -1,0 +1,3 @@
+define("tpl/media/weapp_dialog_content.html.js",[],function(){
+return'{each list as item}\n<li class="weapplink_item selected">\n    <div class="weapplink_item_inner js_weapplink_item_inner" data-appid="{item.appid}">\n        <div class="weapplink_info">\n            <img class="weapplink_avatar" src="{item.pic_url}">\n            <strong class="weapplink_name" title="">{item.nick_name}</strong>\n        </div>\n        <div class="weapplink_select_mask js_weapplink_select_mask" style="display: none;">\n            <i class="icon_card_selected">已选择</i>\n        </div>\n    </div>\n</li>\n{/each}';
+});

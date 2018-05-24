@@ -1,0 +1,3 @@
+define("tpl/setting/more_size.html.js",[],function(){
+return'<div id="moreSize">\n<!-- 二维码更多尺寸 -->\n  <div class="tr trTitle">\n    <span class="td left">二维码边长(cm)</span>\n    <span class="td left">建议扫描距离(米)</span>\n    <span class="td left">下载链接</span>\n    <div class="clr"></div>\n  </div>\n  <!--    var pixSet = [8, 12, 15, 30, 50, 100], dist = [0.5, 0.8, 1, 1.5, 2.5, 5];-->\n  {each pixSet}\n  <div class="tr">\n      <span class="td left">{$value}cm</span>\n      <span class="td left">{dist[$index]}m</span>\n      <span class="td left"><a class="icon18 iconDownload" href="{qrcode}&action=download&style=1&pixsize={$value*28}"></a></span>\n      <div class="clr"></div>\n  </div>\n  {/each}\n  <div class="c-g6">*二维码尺寸请按照43像素的整数倍缩放，以保持最佳效果</div>\n</div>\n';
+});

@@ -1,0 +1,14 @@
+POST http://w-beta-1000.chemanman.com:7815/api/Basic/PriceSystemV2/priceDetailOp/ HTTP/1.1
+Host: w-beta-1000.chemanman.com:7815
+Proxy-Connection: keep-alive
+Content-Length: 486
+accept: application/json
+Origin: http://w-beta-1000.chemanman.com:7815
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
+content-type: application/x-www-form-urlencoded
+Referer: http://w-beta-1000.chemanman.com:7815/Company/priceEditor?id=37
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8,en;q=0.6
+Cookie: PHPSESSID=455bd69543ca5e39ee6cd5aaf228a7e7
+
+req=%7B%22op_type%22%3A%22add%22%2C%22price_id%22%3A%2237%22%2C%22is_ratio%22%3A0%2C%22price_infos%22%3A%7B%22%E6%A0%87%E6%9D%86%E4%BB%B7%22%3A%7B%22attr%22%3A%7B%22price_mode%22%3A4%7D%2C%22values%22%3A%5B%7B%22start_pid%22%3A2101%2C%22end_pid%22%3A2100%2C%22price%22%3A%22100%22%2C%22weight%22%3A%7B%220%E5%85%AC%E6%96%A4%E4%BB%A5%E4%B8%8A%22%3A%5B%22%22%2C%22%22%2C%22%22%5D%7D%2C%22volume%22%3A%7B%220%E6%96%B9%E4%BB%A5%E4%B8%8A%22%3A%5B%22%22%2C%22%22%2C%22%22%5D%7D%7D%5D%7D%7D%7D

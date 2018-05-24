@@ -1,0 +1,3 @@
+define("tpl/register/banklist.html.js",[],function(){
+return'{if list.length>0}\n<div class="frm_controls">\n	{each list as item}\n	<label class="frm_radio_label">\n		<i class="icon_radio"></i>\n		<span class="lbl_content js_txt_bank_name">{item}</span>\n		<input type="radio" name="bank" class="frm_radio" value="{item}">\n	</label>\n	{/each}\n</div>\n{else}\n	<!-- <div>未搜索到与“{keyword}”相关的银行，请重新搜索或<a class="js_btn_reset_search" href="javascript:;">查看全部银行</a> -->\n	<div class="empty_bank_list">\n		没有找到该银行信息，请核实，若开户银行不在列表中，可采用人工验证方式。		<a class="js_btn_reset_search" href="javascript:;">查看全部银行</a>\n	</div>\n{/if}';
+});

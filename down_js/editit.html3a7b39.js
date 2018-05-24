@@ -1,0 +1,3 @@
+define("tpl/editit.html.js",[],function(){
+return'<div class="frm_controls editit_form" data-id="{itemid}" style="display: none;">\n    <span class="frm_input_box">\n    	<input type="text" class="frm_input" value="{txt}">\n    </span>\n    {if helpTxt}\n    <p class="frm_tips">{helpTxt}</p>\n    {/if}\n    <div class="btn_opr">\n    	<a href="javascript:void(0);" class="btn btn_primary editit_sure {opBtnClass}">确定</a>\n    	<a href="javascript:void(0);" class="btn btn_default editit_cancel {opBtnClass}">取消</a>\n    </div>\n    {if enablefail}\n    <p class="frm_msg fail" style="display: none;"></p>\n    {/if}\n    {if enabletip}\n    <p class="frm_tips js_tips"></p>\n    {/if}\n</div>';
+});

@@ -1,0 +1,3 @@
+define("tpl/account_message_list.html.js",[],function(){
+return'<ul class="account_message_list">\n	<li>\n		<a href="javascript:void(0);" class="account_message_link">\n			<strong>消息消息消息消息消息消息消息消息</strong>\n			<span class="read_more">详情</span>\n		</a>\n	</li>\n	<li>\n		<a href="javascript:void(0);" class="account_message_link">\n			<strong>消息消息消息消息消息消息消息消息</strong>\n			<span class="read_more">详情</span>\n		</a>\n	</li>\n</ul>';
+});

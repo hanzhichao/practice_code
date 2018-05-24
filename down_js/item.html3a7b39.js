@@ -1,0 +1,3 @@
+define("tpl/multiSelector/item.html.js",[],function(){
+return'{each list as item}\n<li class="selected_scope_item jsItem {if item.desc}has_desc{/if}" data-name="{item.name}" data-id="{item.id}" data-desc="{item.desc}">\n	<span class="item_name">{item.name}</span>\n	{if item.desc}\n		<span class="item_desc">{item.desc}</span>\n	{/if}\n	<a href="javascript:;" class="as_scope_del jsClose"  data-id="{item.id}" data-name="{item.name}">×</a>\n</li>\n{/each}\n';
+});

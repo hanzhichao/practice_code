@@ -1,0 +1,3 @@
+define("tpl/setting/rename_agree.html.js",[],function(){
+return'<div class="rename_content_step">\n    <!--<h4>修改名称协议</h4>-->\n    <div>\n        <p>1、经身份验证后的公众号，才能申请修改公众号名称；</p>\n        <p>2、名称不得违反国家法律法规及《微信公众平台服务协议》等腾讯协议规则；</p>\n        <p>3、平台可能会要求你提交相应材料，用于进行名称的审核；</p>\n        <p>4、平台有权审核决定你是否可以使用所申请的公众号名称，未经审核通过的，修改不生效；</p>\n        <p>5、申请修改公众号名称，需遵守平台为此设置的其他流程和要求。</p>\n    </div>\n</div>\n<div class="dialog_ft">\n    <a href="javascript:;" class="btn btn_primary js_btn_next">同意并进入下一步</a>\n</div>';
+});

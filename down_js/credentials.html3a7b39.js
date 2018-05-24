@@ -1,0 +1,3 @@
+define("config/credentials.html.js",[],function(){
+return'<div>\n    {if (credentials_length>1)}\n    <div class="frm_control_group radio_block">\n        <label for="" class="frm_label">选择上传资质<br><span class="tips_global">({credentials_length}选1即可)</span></label>\n        <div class="frm_controls js_radio_box">\n            <!-- 这里使用js/biz_web/ui/checkbox.js组件构造单选框 -->\n            <!-- <input type="radio" name="credentials_type" id="" data-label="健康咨询：《增值电信业务经营许可证》">-->\n        </div>\n    </div>\n    {/if}\n\n    <div class="upload_container">\n        \n    </div>\n    \n\n</div>\n';
+});

@@ -1,0 +1,3 @@
+define("tpl/cardticket/member_manage/member_tag.html.js",[],function(){
+return'{each tags_list as item}\n<li data-id="{item.id}" data-type="{item.type}" data-count="{item.count}"><a href="javascript:;">\n	<span class="js_tag_name tag_name" data-id="{item.id}"><span class="js_tag_name_content" title="{item.name}">{item.name}</span>{if show_count}<span class="js_tag_name_count">({item.count})</span>{/if}</span></a></li>\n{/each}\n';
+});

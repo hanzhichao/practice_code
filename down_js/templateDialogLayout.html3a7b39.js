@@ -1,0 +1,3 @@
+define("tpl/mpEditor/templateDialogLayout.html.js",[],function(){
+return'<div>\n    <div id="##" class="%%">\n        <!-- 正文 -->\n        <div class="editor_area">\n            <div class="split_line"></div>\n            <div id="##_iframeholder" class="%%-iframeholder js_reprint_hide">\n                <div id="##_contentplaceholder" class="editor_content_placeholder" style="display:none">从这里开始写模版</div>\n            </div>\n        </div>\n    </div>\n</div>\n';
+});

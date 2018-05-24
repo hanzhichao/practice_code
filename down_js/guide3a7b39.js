@@ -1,0 +1,21 @@
+define("infringement/guide.js",["common/wx/popup.js"],function(t){
+"use strict";
+t("common/wx/popup.js");
+$("#js_btn_detail").on("click",function(){
+$("#tpl_detail").popup({
+title:"详情",
+data:{},
+buttons:[{
+text:"确定",
+click:function(){
+this.remove();
+},
+type:"primary"
+}],
+mask:!0,
+onHide:function(){
+this.remove();
+}
+});
+});
+});

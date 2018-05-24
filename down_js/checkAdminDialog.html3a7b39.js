@@ -1,0 +1,3 @@
+define("tpl/wxverify/checkAdminDialog.html.js",[],function(){
+return'<div>\n	<div class="qrcheck_box js_scan_div">\n	    <div class="tc">\n	        <div class="qrcode_scan qrcode_scan_light">\n	            <div class="qrcode_wrp">\n	                <img class="qrcode js_qrcode" src="" alt="微信二维码" title="微信二维码" />\n	            </div>\n	            <div class="js_status"></div>\n	        </div>\n	    </div>\n    </div>\n</div>\n';
+});

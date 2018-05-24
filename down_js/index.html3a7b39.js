@@ -1,0 +1,3 @@
+define("biz_common/test/respTypesTest/index.html.js",[],function(){
+return'<!DOCTYPE html>\n<html>\n	<head>\n	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />\n		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />\n		<title>测试cache</title>\n	</head>\n	<body>\n		<script src="../../respTypes.js"></script>\n		<script src="index.js"></script>\n	</body>\n</html>\n';
+});

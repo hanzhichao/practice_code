@@ -1,0 +1,3 @@
+define("tpl/media/dialog/image_crop.html.js",[],function(){
+return'<!-- 步骤条同级加个img_crop_panel把两个步骤的内容都包起来 -->\n<div class="img_crop_area group">\n    <div class="img_crop_origin_area">\n        <div class="img_crop_hd">\n            <h4 class="img_crop_title">原图</h4>\n        </div>\n        <div class="img_crop_wrp">\n            <img class="img_crop_origin" src="{url}">\n        </div>\n    </div>\n    <div class="img_crop_edit_area">\n        <div class="img_crop_hd">\n            <h4 class="img_crop_title">封面展示区域</h4>\n            <p class="tips_global img_crop_tips">{tips}</p>\n        </div>\n        <div class="js_crop_wrp img_crop_wrp">\n            <img src="{url}">\n        </div>\n    </div>\n</div>\n\n';
+});

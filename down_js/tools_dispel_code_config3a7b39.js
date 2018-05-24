@@ -1,0 +1,130 @@
+define("cardticket/tools_dispel_code_config.js",["cardticket/tools_add_dispel_code.js","common/wx/Cgi.js","common/wx/dialog.js","common/wx/Tips.js","common/wx/pagebar.js","cardticket/topmenu.js","cardticket/common_template_helper.js","cardticket/send_secure_code.js","cardticket/common_init.js"],function(t){
+"use strict";
+for(var e=t("cardticket/tools_add_dispel_code.js"),c=t("common/wx/Cgi.js"),i=t("common/wx/dialog.js"),o=t("common/wx/Tips.js"),n=t("common/wx/pagebar.js"),s=wx.cgiData,a=[],l=0,r=8,d=l;l+r>d&&d<s.list.length;d++)a.push(s.list[d]);
+if(t("cardticket/topmenu.js").selected("permission"),$("#js_config_content").html(template.render("js_config_content_tpl",{
+data:a,
+total_rows:s.list.length
+})),s.list.length>r){
+new n({
+container:"#js_all_security_code_page",
+perPage:r,
+initShowPage:parseInt(l/r)+1,
+totalItemsNum:s.list.length,
+first:!1,
+last:!1,
+isSimple:!0,
+callback:function(t){
+var e=t.currentPage;
+l=(e-1)*r,a=[];
+for(var c=l;l+r>c&&c<s.list.length;c++)a.push(s.list[c]);
+$("#js_all_security_code").html(template.render("js_all_security_code_tpl",{
+data:a
+}));
+}
+});
+}
+$(".js_add_dispel_code").click(function(){
+return $(this).hasClass("btn_disabled")?!1:void new e({
+success:function(){
+location.reload();
+}
+});
+}),t("cardticket/common_template_helper.js");
+var _=t("cardticket/send_secure_code.js"),m=!1;
+$("#js_config_content").on("click",".js_inotify_code",function(){
+var t=$(this).attr("data-code"),e=new _({
+multi:!0,
+selectComplete:function(i){
+m||(m=!0,c.post({
+url:"/merchant/cardsecuritycodemgr",
+data:{
+action:"send",
+security_code_list:t,
+is_all:i.is_all,
+list:i.list.join("|"),
+antilist:i.antilist.join("|")
+},
+complete:function(){
+m=!1;
+}
+},function(t){
+0==t.base_resp.ret?(o.suc("发送核销码成功"),e.hide()):c.handleRet(t,{
+id:64463,
+key:36,
+url:"/merchant/cardsecuritycodemgr?action=send"
+});
+}));
+}
+});
+}),$("#js_config_content").on("click",".js_del_code",function(){
+var t=$(this).attr("data-code");
+return 1==a.length?void i.show({
+title:"提示",
+msg:"有卡券在用时，核销码不可删除",
+buttons:[{
+text:"我知道了",
+type:"primary",
+click:function(){
+this.remove();
+}
+}]
+}):void i.show({
+title:"提示",
+msg:"确认删除核销码？|删除后将无法使用该验证码进行卡券核销。建议通知店员",
+buttons:[{
+text:"删除",
+type:"primary",
+click:function(){
+m||(m=!0,c.post({
+url:"/merchant/cardsecuritycodemgr",
+data:{
+action:"delete",
+security_code:t
+},
+complete:function(){
+m=!1;
+}
+},function(t){
+0==t.base_resp.ret?(o.suc("删除核销码成功"),location.reload()):c.handleRet(t,{
+id:64463,
+key:36,
+url:"/merchant/cardsecuritycodemgr?action=delete"
+});
+}));
+}
+},{
+text:"取消",
+type:"normal",
+click:function(){
+this.remove();
+}
+}]
+});
+}),$("#js_config_content").on("click",".js_inotify_all_consumer",function(){
+var t=new _({
+multi:!0,
+code_list:s.list,
+selectComplete:function(e,i){
+m||(m=!0,c.post({
+url:"/merchant/cardsecuritycodemgr",
+data:{
+action:"send",
+security_code_list:i.join("|"),
+is_all:e.is_all,
+list:e.list.join("|"),
+antilist:e.antilist.join("|")
+},
+complete:function(){
+m=!1;
+}
+},function(e){
+0==e.base_resp.ret?(o.suc("发送核销码成功"),t.hide()):c.handleRet(e,{
+id:64463,
+key:36,
+url:"/merchant/cardsecuritycodemgr?action=send"
+});
+}));
+}
+});
+}),t("cardticket/common_init.js");
+});

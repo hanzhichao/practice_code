@@ -1,0 +1,3 @@
+define("tpl/idcardhelper.html.js",[],function(){
+return'<script type="text/html" id="idcard_help_tpl">\n    <div class="idcard_inner" style="padding:27px 0;">\n        <div class="imgs tj">\n            <img src="/mpres/htmledition/images/pic/setting/idcard_ok.jpg" alt="" style="width:400px;height:266px;">\n            <img src="/mpres/htmledition/images/pic/setting/idcard_error.jpg" alt="" style="width:400px;height:266px;">\n        </div>\n        <ul class="desc" style="margin-top:10px;color:#8d8d8d;">\n            <li>1.图示例方式双手持身份证，手指不可遮挡身份证信息；</li>\n            <li>2.照片需免冠，建议未化妆，五官清晰可见；</li>\n            <li>3.照片内容真实有效，不得做任何修改；</li>\n            <li>4.支持.jpg .jpeg .bmp .gif格式照片，大小不超过5M。</li>\n        </ul>\n    </div>\n</script>\n';
+});

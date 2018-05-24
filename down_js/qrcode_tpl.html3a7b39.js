@@ -1,0 +1,3 @@
+define("tpl/original/qrcode_tpl.html.js",[],function(){
+return'<div class="qrcheck_qrcode_area">\n    {if (status == \'loading\')}\n        <!-- 等待二维码，转菊花 -->\n        <div class="js_qr_loading qrcheck_loading_area qrcheck_mask">\n            <i class="qrcheck_loading_icon icon_loading_small white"></i>\n            <span class="vm_box"></span>\n        </div>\n    {else if (status == \'waiting\')}\n        <!-- 等待扫描 -->\n        <div class="js_qr_img qrcheck_img_area">\n            <img class="qrcheck_img" src="{img}" alt="">\n        </div>\n    {/if}\n</div>\n<div class="qrcheck_msg_area js_qr_msg"></div>';
+});

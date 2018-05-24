@@ -1,0 +1,3 @@
+define("tpl/basekeyword.html.js",[],function(){
+return'<div class="keywords_box {writable}">\n<p class="js_add_container">\n	<span class="frm_input_box vcode">\n		<input name="keyword" type="text" value="" placeholder="请输入关键字" class="frm_input frm_msg_content js_keyword ">\n	</span>\n	<a href="javascript:;" class="btn btn_default js_btn_add btn_vcode">添加</a>\n</p>\n<p class="frm_msg fail"><span class="frm_msg_content">该分类不存在，您是否想输入“垃圾处理”“垃圾填埋”</span></p>\n<p class="js_error_container"></p>\n<p class="js_related_container"></p>\n<div class="overview_keywords_box js_keywords_box">\n	\n</div>\n</div>';
+});

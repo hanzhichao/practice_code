@@ -1,0 +1,109 @@
+define("ad_system/promotion/edit/click.js",["common/qq/events.js","material/common_edit.js","material/materialDialog.js","common/wx/dialog.js"],function(e){
+"use strict";
+var t=e("common/qq/events.js")(!0),i=e("material/common_edit.js"),_=e("material/materialDialog.js"),s=e("common/wx/dialog.js"),a=wx.cgiData.can_use_hyperlink,o=!1,d=!1;
+t.on("ad_edit:setStep2",function(e){
+if(!d){
+d=!0,t.on("ad_edit:adInfoChange",function(t){
+e=t;
+}),a||$("#js_click_type_1").remove();
+var r=$("#js_click_type").find(".frm_radio");
+r.filter("[value="+e.dest_type+"]").attr("checked",!0);
+{
+r.checkbox({
+type:"radio",
+initOnChanged:!0,
+onChanged:function(){
+var i=this.values()[0];
+e.dest_type=1*i,t.trigger("ad_edit:setPostData","dest_type",i),$("#js_click_area").find(".js_click_area").hide(),
+$("#js_click_area_"+i).show(),e.target_goods&&!o||"0"!=i?($("#js_save_goto_step3").hide(),
+$("#js_goto_step3").show(),$("#js_material_area").hide()):($("#js_save_goto_step3").show(),
+$("#js_goto_step3").hide(),$("#js_material_area").show()),$("#js_ad_showtype_preview")[3==e.ad_goodtype&&"0"==i?"show":"hide"](),
+3==e.ad_goodtype&&"0"==i?$("#js_ad_showtype_preview_profile").show():$("#js_ad_showtype_preview_profile").hide(),
+5!=e.ad_goodtype&&6!=e.ad_goodtype||"0"!=i?$("#js_ad_showtype_preview_app").hide():$("#js_ad_showtype_preview_app").show();
+}
+});
+}
+t.on("ad_edit:clickTypeChange",function(t){
+t=1*t,e.ad_goodtype=t,3==t&&($("#js_click_type_1").hide(),$("#js_click_type_0").click()),
+$("#js_click_type_2")[5==t||6==t?"show":"hide"]();
+var i=0;
+if(!wx.cgiData.can_use_appdetail||5!=t&&6!=t||(i=2),$("#js_click_type_"+i).find(".frm_radio").click(),
+!e.dest_type){
+var _=e.dest_type;
+3==e.ad_goodtype&&2!=_?$("#js_ad_showtype_preview_profile").show():$("#js_ad_showtype_preview_profile").hide(),
+5!=e.ad_goodtype&&6!=e.ad_goodtype||2==_?$("#js_ad_showtype_preview_app").hide():$("#js_ad_showtype_preview_app").show();
+}
+});
+var p=new i({
+editor_id:"js_ueditor",
+can_use_hyperlink:a,
+title$:"#js_title_material",
+preview_iframe$:"#js_preview_page iframe",
+pre_preview:function(){},
+suc:function(e){
+l({
+id:e.id,
+sign:e.sign,
+title:$("#js_title_material").val()
+},!0,!0),t.trigger("ad_edit:gotoAndSetstep",3);
+},
+preview:function(e){
+l({
+id:e.id,
+sign:e.sign,
+title:$("#js_title_material").val()
+},!0,!0);
+}
+});
+t.trigger("ad_edit:setMaterialEditor",p),$("#js_edit_material").click(function(){
+s.show({
+type:"info",
+msg:"温馨提示|一旦编辑推广页，广告将重新进入审核状态。",
+mask:!0,
+buttons:[{
+text:"确定",
+click:function(){
+$("#js_appmsg_info_preview").hide(),$("#js_material_area").show(),e.body&&p.setContent(e.body||""),
+o=!0,t.trigger("ad_edit:hasMaterEdit",o),$("#js_save_goto_step3").show(),$("#js_goto_step3").hide(),
+this.remove();
+}
+},{
+text:"取消",
+type:"normal",
+click:function(){
+this.remove();
+}
+}]
+});
+}),1*e.dest_type!=0||e.target_goods?($("#js_goto_step3").show(),$("#js_save_goto_step3").hide()):($("#js_goto_step3").hide(),
+$("#js_save_goto_step3").show(),$("#js_material_area").show());
+var n=new _,l=function(i,_,s){
+var a="http://mp.weixin.qq.com/mp/ad?id=%s&sign=%s&__biz=%s#wechat_redirect".sprintf(i.id,i.sign,wx.data.uin_base64);
+$("#js_appmsg_info_preview").find("a.js_ad_link").attr("href",a).html(i.title.html(!0)),
+_?($("#js_appmsg_info_preview").hide(),$("#js_material_area").show()):$("#js_appmsg_info_preview").show(),
+t.trigger("ad_edit:setPostData","goods",i.id),t.trigger("ad_edit:setPostData","content_url",a),
+t.trigger("ad_edit:setPostData","title",i.title),e.sign=i.sign,e.body=i.body,i.body&&p.setContent(i.body||""),
+$("#js_title_material").val(i.title),s||($("#js_select_appmsg").html("重新导入"),i.id&&p.setId(i.id));
+};
+e.id&&l({
+id:e.id,
+sign:e.sign,
+body:e.body,
+title:e.target_goods
+},!1,!0),$("#js_select_appmsg").click(function(){
+n.show({
+callback:function(e){
+o=!0,t.trigger("ad_edit:hasMaterEdit",o),l(e,!0),$("#js_goto_step3").html("保存并下一步");
+}
+},!0,!1);
+}),function(){
+e.id&&l({
+id:e.id,
+sign:e.sign,
+body:e.body,
+title:e.target_goods
+},!1,!0);
+}(),$("#js_outerlink").val(e.outer_link.html(!1));
+}
+});
+});

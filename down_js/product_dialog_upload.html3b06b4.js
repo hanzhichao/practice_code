@@ -1,0 +1,3 @@
+define("tpl/media/product_dialog_upload.html.js",[],function(){
+return'<div class="product-filter__upload">\n    <a href="javascript:;" class="js_upload btn btn_primary">上传文件</a>\n    <div class="product-filter__upload-description">\n        通过excel上传商品id列表，快速筛选出商品，内容格式请严格参照<a href="{templateFileLink}" target="_blank" download="商品筛选模板.xls">商品筛选模板</a>（请确保商品是已导入商品素材库的）    </div>\n\n    <div class="product-filter__upload-process" style="display: none">\n        文件名.xls <div class="progress_bar"><div class="progress_bar_thumb" style="width:57%"></div></div>\n    </div>\n</div>';
+});

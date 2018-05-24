@@ -1,0 +1,3 @@
+define("tpl/replyContent.html.js",[],function(){
+return'<div class="quick_result_wrp s_row jsReplyBackBox" style="display:block;">\n    <label for="" class="frm_label result_title">你回复的内容</label>\n    <div class="s_cell reply_content_wrp"><div class="reply_content">{=content}</div></div> \n    <div class="s_cell discuss_time">{time}</div>\n    <div class="s_cell discuss_opr last_child">\n        <a href="javascript:;" class="jsReplyDel" data-replyid="{reply_id}">删除</a>\n    </div>\n</div>\n';
+});

@@ -1,0 +1,33 @@
+{
+  "op_type": "add",
+  "price_id": "37",
+  "is_ratio": 0,
+  "price_infos": {
+    "标杆价": {
+      "attr": {
+        "price_mode": 4
+      },
+      "values": [
+        {
+          "start_pid": 2101,
+          "end_pid": 2100,
+          "price": "100",
+          "weight": {
+            "0公斤以上": [
+              "",
+              "",
+              ""
+            ]
+          },
+          "volume": {
+            "0方以上": [
+              "",
+              "",
+              ""
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

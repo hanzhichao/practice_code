@@ -1,0 +1,3 @@
+define("tpl/noticeBox.html.js",[],function(){
+return'<div class="account_message_box">\n	<ul class="account_message_list">\n		{each list as item}\n		<li {if item.level==1}class="highlight"{/if}>\n			<a href="{item.url}" class="account_message_link">\n                <strong>\n                    <i class="icon_dot">●</i>{item.text}\n                </strong>{if item.level==1}<span class="read_more">详情</span>{/if}\n			</a>\n		</li>\n		{/each}\n		<a href="javascript:void(0);" class="btn btn_inbox_closed" style="display:none;">我知道了</a>\n	</ul>\n    <span class="btn_closed jsNoticeClose">关闭</span>\n    <i class="message_arrow message_arrow_out"></i>\n    <i class="message_arrow message_arrow_in"></i>\n</div>\n';
+});

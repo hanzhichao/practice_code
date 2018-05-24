@@ -1,0 +1,3 @@
+define("setting/tpl/unbindLegalPersonDialog.html.js",[],function(){
+return'<div>\n	<div class="js_step_qrcheck"> <!-- 管理员扫码 -->\n	    <div class="qrcheck_box js_qrcheck_div"></div>\n	    <p class="js_change tc">若此微信号已无法使用，请点此<a target="_blank" href="https://mp.weixin.qq.com/acct/findacct?action=scan">重置绑定微信号</a></p>\n	</div>\n	<div class="js_step_tips" style="display: none;"> <!-- 提交后的提示 -->\n	    <div class="page_msg small simple default single_line">\n	        <div class="inner">\n	            <span class="msg_icon_wrp">\n	                <i class="icon_msg waiting"></i>\n	            </span>\n	            <div class="msg_content">\n	                <h4>解绑后将清空法定代表人信息，确定解绑？</h4>\n	            </div>\n	        </div>\n	    </div>\n	</div>\n</div>\n';
+});

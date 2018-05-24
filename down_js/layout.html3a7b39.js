@@ -1,0 +1,3 @@
+define("tpl/material/material_dialog/layout.html.js",[],function(){
+return'<div class="brand_tmpl_choose">\n    <div class="js_title mod_hd" style="display:none;">\n        <div class="mod_opr">\n            <a target="_blank" href="{url}" class="btn btn_primary btn_add "><i class="icon14_common add_white"></i>新建推广页</a>\n        </div>\n    </div>\n\n    <ul class="js_list msg_list brand_tmpl_list">\n        <li class="wrp_loading msg_item js_loading"><i class="icon_loading_small white">loading...</i></li>\n        <li class="no_data js_no_data" style="display:none;">暂无推广页<br>你可以<a href="{url}" target="_blank">新增推广页</a></li>\n    </ul>\n    <div class="turn_page pageNavigator pos_right"></div>\n</div>\n';
+});

@@ -1,0 +1,3 @@
+define("setting/tpl/postedit.html.js",[],function(){
+return'<label for="" class="frm_label">{name}</label>\n<div class="frm_controls">\n	<span class="frm_input_box">\n		<input type="text" class="frm_input">\n	</span>\n    <a href="javascript:;" class="btn btn_default"></a>\n    <p class="frm_msg fail js_fail" style="display:none;">该域名不通过</p>\n    <p class="frm_tips js_pass" style="display:none;">域名提交通过，已将其作为可信域名</p>\n</div>';
+});

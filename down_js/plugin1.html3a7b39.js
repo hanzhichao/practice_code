@@ -1,0 +1,3 @@
+define("tpl/homepage/plugins/plugin1.html.js",[],function(){
+return'<div class="slider">\n    <div class="swiper">\n    	{{each (<name>.plugin1.appmsg_list as key item)}}\n        <div class="item">\n            <div class="img"\n                 style="background: url({{item.cover.nogif()}}) center center no-repeat; background-size: cover;"></div>\n            <p class="desc">{{item.title}}</p>\n        </div>\n        {{/each}}\n    </div>\n    <div class="indicator">\n    	{{each (<name>.plugin1.appmsg_list as key item)}}\n        <a href="javascript:void(0);"><i class="icon_dot {{if (key==0)}}active{{/if}}"></i></a>\n        {{/each}}\n    </div>\n</div>\n';
+});

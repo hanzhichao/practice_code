@@ -1,0 +1,122 @@
+define("ibeacon/pageDialog.js",["biz_web/ui/checkbox.js","common/wx/popup.js","common/wx/Cgi.js","biz_web/ui/dropdown.js","common/wx/pagebar.js"],function(e){
+"use strict";
+e("biz_web/ui/checkbox.js"),e("common/wx/popup.js");
+var a=e("common/wx/Cgi.js"),t=e("biz_web/ui/dropdown.js"),n=e("common/wx/pagebar.js"),s=function(e){
+this.container=e.container,this.title=e.title,this.className=e.className,this.onShow=e.onShow,
+this.buttons=e.buttons,this.width=e.width,this.init();
+},i={
+key:"",
+pageIndex:1,
+pageRecords:"",
+pageCount:0,
+pageID:"",
+type:0
+};
+s.prototype.init=function(){
+var e=this;
+return $(e.container).popup({
+title:e.title,
+width:e.width,
+className:e.className,
+buttons:e.buttons,
+onShow:function(){
+i.$jsPageTable=this.$dialogWrp.eq(0).find("#js_page_table"),i.$jsPagination=this.$dialogWrp.eq(0).find(".pagination_wrp"),
+i.$jsPageSearch=this.$dialogWrp.eq(0).find(".js_a_search"),i.$jsPageSearchInput=this.$dialogWrp.eq(0).find(".js_search"),
+i.$jsLoading=this.$dialogWrp.eq(0).find(".js_loading"),i.$jsPageDrop=new t({
+container:".js_page_type_dropdown",
+label:"页面类型",
+data:[{
+name:"全部",
+value:0
+},{
+name:"自定义链接",
+value:1
+},{
+name:"卡券发放页面",
+value:10
+},{
+name:"商户主页",
+value:11
+},{
+name:"抽奖页面",
+value:14
+}],
+callback:function(e){
+i.$jsLoading.show(),i.$jsPageTable.hide(),i.type=e,a.post({
+url:"/merchant/beaconlistpage?action=list&f=json",
+data:{
+page_index:1,
+page_type:i.type,
+search_txt:i.key
+},
+success:function(e){
+0==e.base_resp.ret?(i.pageRecords=e.records,i.pageCount=e.page_count,g(0,10),i.$jsLoading.hide(),
+i.$jsPageTable.show(),c()):Tips.err("系统错误");
+}
+});
+}
+}),a.post({
+url:"/merchant/beaconlistpage?action=list&f=json",
+data:{
+page_index:1,
+page_type:0
+},
+success:function(e){
+0==e.base_resp.ret?(i.pageRecords=e.records,i.pageCount=e.page_count,g(0,10),i.$jsLoading.hide(),
+i.$jsPageTable.show(),c()):Tips.err("系统错误");
+}
+}),o();
+}
+}),e;
+},s.prototype.getPageID=function(){
+return i.pageID;
+};
+var o=function(){
+i.$jsPageSearch.click(function(){
+i.key=i.$jsPageSearchInput.val(),i.type=0,i.$jsPageDrop.reset(),p();
+}),i.$jsPageSearchInput.on("keyup",function(){
+var e="which"in event?event.which:event.keyCode;
+13!=e&&$(this).val()||(i.key=$(this).val(),i.type=0,i.$jsPageDrop.reset(),p());
+}),i.$jsPageSearchInput.on("change",function(){
+i.key=$(this).val();
+});
+},c=function(){
+i.pageCount>0&&(i.$jsPageBar=new n({
+container:i.$jsPagination,
+perPage:10,
+first:!1,
+last:!1,
+isSimple:!0,
+initShowPage:1,
+totalItemsNum:i.pageCount,
+callback:function(e){
+var a=e.currentPage;
+g(10*(a-1),10*a);
+}
+}),i.$jsPagination.show());
+},p=function(){
+i.$jsLoading.show(),i.$jsPageTable.hide(),i.pageID="",a.post({
+url:"/merchant/beaconlistpage?action=list&f=json",
+data:{
+page_index:1,
+page_type:i.type,
+search_txt:i.key
+},
+success:function(e){
+0==e.base_resp.ret?(i.$jsLoading.hide(),i.$jsPageTable.show(),i.$jsPagination.hide(),
+i.$jsPagination.html(""),i.pageRecords=e.records,i.pageIndex=1,i.pageCount=e.page_count,
+g(0,10),c()):Tips.err("系统错误");
+}
+});
+},g=function(e,a){
+i.$jsPageTable.html(template.render("js_page_list_tpl",{
+list:i.pageRecords.slice(e,a)
+})),i.$jsPageTable.find(".js_checkbox").checkbox({
+multi:!1,
+onChanged:function(e){
+i.pageID=e.data("page_id");
+}
+});
+};
+return s;
+});

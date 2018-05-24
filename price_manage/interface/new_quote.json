@@ -1,0 +1,11 @@
+{
+  "obj_info": {
+    "price_type": "auth_basic_pt",
+    "state": 1,
+    "fee_name": "标杆价",
+    "price_name": "标杆maxwv-0",
+    "pm_id": "28"
+  },
+  "type": "PInfo",
+  "op_type": "add"
+}

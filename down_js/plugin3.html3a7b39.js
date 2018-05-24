@@ -1,0 +1,3 @@
+define("tpl/homepage/plugins/plugin3.html.js",[],function(){
+return'<div class="article_list">\n    {{each (<name>.plugin3.appmsg_list as key appmsg)}}\n    <a class="list_item" href="javascript:void(0);">\n        <div class="cover">\n            <img class="img" src="{{appmsg.cover.nogif()}}" alt="">\n            <i class="default_thumb"></i>\n        </div>\n        <div class="cont">\n            <h2 class="title">{{appmsg.title}}</h2>\n            <p class="desc">{{appmsg.digest}}</p>\n        </div>\n    </a>\n    {{/each}}\n</div>\n';
+});

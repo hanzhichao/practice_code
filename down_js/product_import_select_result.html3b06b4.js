@@ -1,0 +1,3 @@
+define("tpl/media/product_import_select_result.html.js",[],function(){
+return'{if errMsg}\n  <span class="filter-fail">{errMsg}</span>\n{else if templateFileLink}\n  <span class="filter-fail">\n  文件格式有误，<a href="{templateFileLink}" target="_blank" download="商品筛选模板.xls">下载商品筛选模板</a>  </span>\n{else}  \n  <span class="filter-fail">\n  成功导入筛选{suc_num}个商品  {if err_num>0}\n  ，{err_num}个商品筛选失败，    {if err_link}\n    <a href="{err_link}" target="_blank" download="筛选失败商品列表.xls">下载筛选失败的商品列表</a>    {/if}\n  {/if}  \n  </span>  \n{/if}\n。&nbsp;&nbsp;<a href="javascript:;" class="js_clear_import">清空筛选</a>';
+});

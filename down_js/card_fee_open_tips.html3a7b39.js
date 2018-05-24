@@ -1,0 +1,3 @@
+define("tpl/cardticket/card_fee_open_tips.html.js",[],function(){
+return'<div class="tl">\n	<p>欢迎申请开通朋友共享的优惠券功能及券点账户！</p>\n	<br>\n	<strong>共享</strong>\n	<p>朋友共享的优惠券（以下简称“朋友的券”），是优惠券的新玩法。一个人领取，好友无需领取，都可在优惠券列表看到和使用。大幅提升传播速度，曝光流量。</p>\n	<br>\n	<strong>裂变</strong>\n	<p>你可以自由设置用户核销后再返一张券，返券可以是任意一张已经创建的朋友的券。裂变会成为共享行为持续发生的重要桥梁。</p>\n	<br>\n	<strong>券点</strong>\n	<p>券点是用来添加朋友的券库存的弹药，点击“确认开通”后，将为你开通券点账户。</p>\n	<br>\n	<p>点击确认开通即表示你已阅读并接受《<a href="https://mp.weixin.qq.com/cgi-bin/frame?t=cardticket/faq_apply_card_frame&type=info&lang=zh_CN&token={token}" target="_blank">微信公众平台卡券功能服务协议</a>》所有条款，特别是关于朋友共享优惠券的相关条款。</p>\n</div>';
+});

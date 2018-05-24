@@ -1,0 +1,3 @@
+define("original/common/tpl/BindAppCard.html.js",[],function(){
+return'<div class="biz_account_detail">\n    <strong class="profile_nickname">{nick_name}</strong>\n    <img class="profile_avatar" src="/misc/getqrcode?action=getbyfakeuin&fakeuin={uin}&pixsize=128&style=1&token={token}" alt="{nick_name}">\n    <p class="profile_meta">\n        <label class="profile_meta_label">微信号</label>\n        <span class="profile_meta_value">{alias}</span>\n    </p>\n    <p class="profile_meta">\n        <label class="profile_meta_label">功能介绍</label>\n        <span class="profile_meta_value">{signature}</span>\n    </p>\n</div>';
+});

@@ -1,0 +1,3 @@
+define("tpl/simple_popup.html.js",[],function(){
+return'<div class="simple_dialog_content">\n    <form action="return:false;" class="form">\n         <div class="frm_control_group">\n            {if label}<label class="frm_label">{label}</label>{/if}\n            <span class="frm_input_box">\n                <input type="text" class="frm_input js_input"  />\n                <input style="display:none"/>\n            </span>\n            {if tips}<p class="frm_tips">{tips}</p>{/if}\n        </div>\n    </form>\n</div>\n';
+});

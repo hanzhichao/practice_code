@@ -1,0 +1,3 @@
+define("tpl/setting/rename_cancel_result.html.js",[],function(){
+return'<div class="page_msg small default">\n    <div class="inner group">\n        <span class="msg_icon_wrp">\n            <i class="icon_msg success"></i>\n        </span>\n        <div class="msg_content">\n            <h4>已撤销</h4>\n            <p>当前帐号将继续保持原名称 {oldName}，而新名称 {newName} 已被释放。<br>你可以重新修改名称。</p>\n        </div>\n    </div>\n    <div class="dialog_ft">\n        <a href="javascript:;" class="btn btn_primary js_btn_close">关闭</a>\n    </div>\n</div>';
+});

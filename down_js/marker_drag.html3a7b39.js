@@ -1,0 +1,3 @@
+define("tpl/cardticket/marker_drag.html.js",[],function(){
+return'<!--地图上标识后的编辑地理位置的小tip-->\n<!--状态-->\n<!--\n<span class="state review r">审核中</span>\n<span class="state pass r">已通过</span>\n-->\n<!--状态end-->\n\n<!--地图上标识后的显示地理位置的小tip-->\n<div class="map_tip mark_show">\n	<div class="content">\n		{if error==1}\n		<!--找不到门店地址-->\n		<p class="dec adr no-address">找不到门店地址，拖拽创建新标注</p>\n		{else}\n		<p class="dec adr">是否使用此位置作为门店的定位？</p>\n\n		<div class="oper group js_submitgroup">\n			<a class="btn btn_primary l js_submitcheck" href="javascript:void(0);">确定</a>\n		</div>\n		{/if}\n	</div>\n</div>\n<!--地图上标识后的编辑地理位置的小tip end-->';
+});

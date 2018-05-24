@@ -1,0 +1,63 @@
+"use strict";
+define("components/popup.vue.js",[],function(){
+Vue.component("mp-popup",{
+template:'\n  <div v-show="!hidden">\n    <div :class="[\'dialog_wrp\', className]" :style="style" ref="main">\n      <div class="dialog">\n        <div class="dialog_hd">\n          <h3>{{title}}</h3>\n          <a @click.prevent="close" class="icon16_opr closed pop_closed" href="#">关闭</a>\n        </div>\n        <div class="dialog_bd">\n          <slot name="body" ref="body"></slot>\n        </div>\n        <div class="dialog_ft">\n          <slot name="footer"></slot>\n        </div>\n      </div>\n    </div>\n    <div v-if="mask" class="mask">\n      <iframe frameborder="0" style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity:0);position:absolute;top:0px;left:0px;width:100%;height:100%;" src="about:blank"></iframe>\n    </div>\n  </div>\n  ',
+props:{
+className:{
+type:String,
+"default":""
+},
+title:{
+type:String,
+"default":"温馨提示"
+},
+width:{
+type:Number,
+"default":726
+},
+height:{
+type:Number,
+"default":0
+},
+mask:{
+type:Boolean,
+"default":!0
+}
+},
+data:function(){
+return{
+hidden:!0,
+marginTop$$:0,
+marginLeft$$:0
+};
+},
+computed:{
+style:function(){
+var t={};
+return this.width&&(t.width=this.width+"px"),this.height&&(t.height=this.height+"px"),
+t.marginLeft=this.marginLeft$$+"px",t.marginTop=this.marginTop$$+"px",t;
+}
+},
+mounted:function(){
+this._updatePosition();
+},
+updated:function(){
+this._updatePosition();
+},
+methods:{
+close:function(){
+this.hide(),this.$emit("close");
+},
+_updatePosition:function(){
+var t=this.$refs.main;
+this.marginTop$$=-t.offsetHeight/2,this.marginLeft$$=-t.offsetWidth/2;
+},
+show:function(){
+this.hidden=!1;
+},
+hide:function(){
+this.hidden=!0;
+}
+}
+});
+});

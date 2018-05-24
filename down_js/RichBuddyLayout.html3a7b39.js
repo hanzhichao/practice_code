@@ -1,0 +1,3 @@
+define("tpl/RichBuddy/RichBuddyLayout.html.js",[],function(){
+return'<div class="rich_buddy popover arrow_left" style="display:none;">\n    <div class="popover_inner">\n        <div class="popover_content">\n            <div class="rich_buddy_hd">详细资料</div>\n \n            <div class="loadingArea rich_buddy_loading"><span class="vm_box"></span><i class="icon_loading_small white"></i></div>\n            <div class="rich_buddy_bd buddyRichContent">\n            </div>\n        </div>\n    </div>\n    <i class="popover_arrow popover_arrow_out"></i>\n    <i class="popover_arrow popover_arrow_in"></i>\n</div> \n';
+});

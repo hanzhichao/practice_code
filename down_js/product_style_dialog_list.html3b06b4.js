@@ -1,0 +1,3 @@
+define("tpl/media/product_style_dialog_list.html.js",[],function(){
+return'{each list as item index}\n<label for="product_style_{index}" class="product-style">\n  <div class="js_checkbox_parent product-style__meta">\n    <i class="icon_radio"></i>\n    <span class="product-style__name">{item.name}</span>\n    <input type="radio" class="frm_radio" name="productstyle" data-id="{item.id}" id="product_style_{index}">\n  </div>\n  <div class="product-style__container">\n  	{if item.cover}\n    <img src="{item.cover}" alt="">\n    {else}\n    {=html}\n    {/if}\n  </div>\n</label>\n{/each}';
+});

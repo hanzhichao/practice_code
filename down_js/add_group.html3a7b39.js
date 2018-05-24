@@ -1,0 +1,3 @@
+define("tpl/media/dialog/add_group.html.js",[],function(){
+return'<div class="popover_edit">\n    <label for="" class="frm_label">创建分组</label>\n\n    <div class="frm_controls">\n    <span class="frm_input_box">\n        <input type="text" class="frm_input js_name" value="">\n    </span>\n\n        <p class="frm_tips"></p>\n\n        <p class="frm_msg fail">\n            <span class="frm_msg_content">填错了！！！！</span>\n        </p>\n    </div>\n</div>\n';
+});

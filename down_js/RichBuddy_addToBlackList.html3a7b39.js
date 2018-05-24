@@ -1,0 +1,3 @@
+define("tpl/RichBuddy/RichBuddy_addToBlackList.html.js",[],function(){
+return'<div>\n	<div class="popover_content ">加入黑名单后，你不会再收到该用户的消息，且用户无法接收公众号发出的消息，无法参与留言和赞赏。</div>\n	<div class="popover_opr_forbid">\n	    <label for="" class="frm_checkbox_label">\n	        <i class="icon_checkbox"></i>\n	        <input type="checkbox" class="frm_checkbox js_checkbox">投诉用户发骚扰信息	    </label>\n	</div>\n</div>';
+});

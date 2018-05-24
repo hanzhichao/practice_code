@@ -1,0 +1,3 @@
+define("tpl/homepage/plugins/plugin2_edit/cate_list_edit.html.js",[],function(){
+return'<div>\n    <!--BEGIN 填写tab分类-->\n    <div class="section_form">\n        <div class="frm_control_group">\n            <a class="opr js_del_cate" href="javascript:void(0);">删除</a>\n            <label for="" class="frm_label">分类名称</label>\n            <div class="frm_controls">\n                <span class="frm_input_box with_counter counter_in append">\n                    <input type="text" class="frm_input js_cate_input">\n                    <em class="frm_input_append frm_counter js_cate_input_len_tips"></em>\n                </span>\n            </div>\n        </div>\n    </div>\n    <!--END 填写tab分类-->\n    <div class="js_import_appmsglist"></div>\n</div>';
+});

@@ -1,0 +1,3 @@
+define("tpl/qrcode_download.html.js",[],function(){
+return'<div class="table_wrp with_border qrcode_size" id="moreSize">\n	<table class="table" cellspacing="0">\n		<thead class="thead">\n			<tr>\n				<th class="table_cell">二维码边长(cm)</th>\n				<th class="table_cell">建议扫描距离(米)</th>\n				<th class="table_cell no_extra">下载链接</th>\n			</tr>\n		</thead>\n		<tbody class="tbody">\n			{each pixSet as value index}\n			<tr>\n				<td class="table_cell"> {value}cm </td>\n				<td class="table_cell"> {dist[index]}m </td>\n				<td class="table_cell"> <a class="icon18_common download_gray" href="{qrcode}&pixsize={value*28}">下载</a> </td>\n			</tr>\n			{/each}\n		</tbody>\n	</table>\n	<br>\n	<p class="qrcode_size_tips">*二维码尺寸请按照43像素的整数倍缩放，以保持最佳效果</p>\n</div>';
+});

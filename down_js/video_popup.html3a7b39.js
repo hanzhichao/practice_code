@@ -1,0 +1,3 @@
+define("tpl/message/video_popup.html.js",[],function(){
+return'<div>\n   <div class="frm_control_group">\n       <label for="" class="frm_label">标题</label>\n       <div class="frm_controls">\n           <span class="frm_input_box"><input type="text" class="frm_input title"></span>\n       </div>\n   </div>\n   <div class="frm_control_group">\n       <label for="" class="frm_label">摘要<span class="tips">（选填）</span></label>\n       <div class="frm_controls">\n           <span class="frm_textarea_box"><textarea class="frm_textarea digest"></textarea></span>\n       </div>\n   </div>\n</div>\n \n';
+});

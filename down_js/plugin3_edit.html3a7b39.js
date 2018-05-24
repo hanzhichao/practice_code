@@ -1,0 +1,3 @@
+define("tpl/homepage/plugins/plugin3_edit.html.js",[],function(){
+return'<div class="portable_editor to_left">\n    <div class="editor_inner">\n        <!--BEGIN editor_bd-->\n        <div class="editor_bd js_import_appmsglist">\n        </div>\n        <!--END editor_bd-->\n        <span class="editor_arrow_wrp">\n            <i class="editor_arrow editor_arrow_out"></i>\n            <i class="editor_arrow editor_arrow_in"></i>\n        </span>\n    </div>\n</div>';
+});

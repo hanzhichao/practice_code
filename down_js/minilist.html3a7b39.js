@@ -1,0 +1,3 @@
+define("tpl/shop/minilist.html.js",[],function(){
+return'<div class="simple_dialog_content">\n    <div class="sub_title_bar in_dialog">\n        <div class="page_nav_wrp js_pageNavigator"></div>\n    </div>\n    <div class="table_wrp dialog_list">\n            <table class="table" cellspacing="0">\n                <tbody class="tbody">\n                	<tr class="empty_item"><td class="empty_tips">加载中</td></tr>\n            	</tbody>\n        </table>\n    </div>\n    <div class="dialog_ft_desc">已选择：<span class="js_count" data-gds="">0</span>件</div>\n</div>\n';
+});

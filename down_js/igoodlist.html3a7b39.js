@@ -1,0 +1,3 @@
+define("tpl/shop/igoodlist.html.js",[],function(){
+return'{if (goods.length > 0)}\n{each goods as item}\n<tr>\n    <td class="table_cell">\n        <div class="goods_info">\n            <img class="cover" src="{item.icon_url && item.icon_url.http2https()}" alt="{item.base_attr.name}">\n            <p class="title">{item.base_attr.name}</p>\n            <label class="frm_checkbox_label">\n                <i class="icon_checkbox"></i>\n                <input type="checkbox" class="frm_checkbox js_select js_igood" value="{item.product_id}">\n            </label>\n        </div>\n    </td>\n</tr>\n{/each}\n{else}\n<tr class="empty_item"><td class="empty_tips">没有任何商品</td></tr>\n{/if}\n';
+});

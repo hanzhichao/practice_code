@@ -1,0 +1,3 @@
+define("tpl/mpEditor/plugin/link_acc_item.html.js",[],function(){
+return'{each list as item}\n<div data-fakeid="{item.fakeid}" data-nickname="{item.nickname||item.alias}" class="js_acc_item search_biz_item">\n    <div class="search_biz_type">\n        <p>{service_type[item.service_type]||service_type[\'-1\']}</p>\n    </div>\n    <div class="search_biz_avatar">\n        <img src="{item.round_head_img}" alt="{item.nickname}">\n    </div>\n    <div class="search_biz_info">\n        <p class="search_biz_nickname">{item.nickname||item.alias}</p>\n        <p class="search_biz_id">微信号：{item.alias}</p>\n    </div>\n</div>\n{/each}';
+});

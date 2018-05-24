@@ -1,0 +1,3 @@
+define("tpl/media/adcpc_catitem.html.js",[],function(){
+return'<div class="tag_choose_list">\n    {each sel_item as item idx}\n    <span class="tag_choose">{item.name}<span class="tag_choose_del js_cat_choose_del" data-category_id="{item.category_id}">删除</span></span>\n    {/each}\n    {if sel_item.length > 0}\n    <a class="global_link_opr js_clear_all" href="javascript:;" >清空</a>\n    {/if}\n</div>\n';
+});

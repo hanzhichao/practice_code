@@ -1,0 +1,3 @@
+define("tpl/media/templateListDialog.html.js",[],function(){
+return'<div class="dialog_media_container">\n  <div class="weui-desktop-global-mod weui-desktop-media-global-bar">\n    <div class="weui-desktop-global__extra">\n      <a class="btn btn_default" target="_blank" href=\'/cgi-bin/appmsgtemplate?action=list&begin=0&count=6&lang=zh_CN&token={token}\'>管理模版</a>\n    </div>\n  </div>\n  <div class="weui-desktop-media-list-wrp">\n    <p class="js_loading icon_loading_small white">加载中</p>\n    <div class="js_content" style="display: none;"></div>\n  </div>\n  <div class="js_pagebar pagination_wrp"></div>\n</div>';
+});

@@ -1,0 +1,3 @@
+define("tpl/vote/vote_item.html.js",[],function(){
+return'<div class="frm_control_group vote_op_third">\n	<div class="frm_label">选项{itemSize}</div>\n	<div class="frm_controls">\n		<span class="frm_input_box with_counter counter_in append"><input type="text" placeholder="" class="frm_input" name="optionss"><em class="frm_input_append frm_counter">43/43</em></span>\n		<span class="btn btn_input btn_default">\n			<button>上传图片</button>\n		</span>\n		<a href="javascript:;" class="js_delete_item" data-tag="{index}" data-item="{itemSize}">删除选项</a>\n	</div>\n</div>';
+});

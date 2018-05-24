@@ -1,0 +1,32 @@
+define("wifi/qrcode_list.js",["wifi/top.js","common/wx/popup.js"],function(t){
+"use strict";
+t("wifi/top.js"),t("common/wx/popup.js"),$(".js_list").html(template.render("js_list_tpl",{
+list:wx.cgiData.list
+})),$("body").on("click",".js_preview",function(){
+var t=$(this).data("img"),i=$(this).data("download"),e=wx.cgiData.shop_name+(wx.cgiData.branch_name?"（"+wx.cgiData.branch_name+")":"");
+$(template.render("js_preview_tpl",{
+img_url:t,
+name:e
+})).popup({
+title:"预览",
+buttons:[{
+text:"下载",
+type:"primary",
+click:function(){
+window.open(i),this.remove();
+}
+},{
+text:"取消",
+click:function(){
+this.remove();
+}
+}],
+onShow:function(){
+this.resetPosition();
+},
+onHide:function(){
+this.remove();
+}
+});
+});
+});

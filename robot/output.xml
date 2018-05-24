@@ -1,152 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.2 (Python 3.6.3 on win32)" generated="20180110 11:42:07.511">
-<suite id="s1" name="Baidu Search" source="D:\Projects\test\robot\baidu_search.robot">
-<test id="s1-t1" name="case1">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the given ``url``.</doc>
+<robot generator="Robot 3.0.2 (Python 3.6.3 on win32)" generated="20180309 12:25:11.762">
+<suite id="s1" name="Test Mysql" source="D:\Projects\test\robot\test_mysql.robot">
+<test id="s1-t1" name="Test">
+<kw name="Connect To Database Using Custom Params" library="DatabaseLibrary">
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to</doc>
 <arguments>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>pymysql</arg>
+<arg>database='spicespirit', user='root', password='spice', host='192.168.100.198', port=3306,charset='utf8'</arg>
 </arguments>
-<msg timestamp="20180110 11:42:07.643" level="INFO">Opening browser 'Chrome' to base url 'http://www.baidu.com'.</msg>
-<status status="PASS" starttime="20180110 11:42:07.642" endtime="20180110 11:42:13.226"></status>
+<msg timestamp="20180309 12:25:11.821" level="INFO">Executing : Connect To Database Using Custom Params : pymysql.connect(db_api_2.connect(database='spicespirit', user='root', password='spice', host='192.168.100.198', port=3306,charset='utf8')) </msg>
+<status status="PASS" starttime="20180309 12:25:11.802" endtime="20180309 12:25:11.829"></status>
 </kw>
-<kw name="Baidu Search">
+<kw name="Query" library="DatabaseLibrary">
+<doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional</doc>
 <arguments>
-<arg>robot framework</arg>
+<arg>select * from u_user where phone='18010181267'</arg>
 </arguments>
 <assign>
-<var>${title}</var>
+<var>${result}</var>
 </assign>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<msg timestamp="20180309 12:25:11.830" level="INFO">Executing : Query  |  select * from u_user where phone='18010181267' </msg>
+<msg timestamp="20180309 12:25:11.833" level="INFO">${result} = ((624275, '韩志超(先生)', '', '18010181267', '', 3, '', '', '', 0, 3, '', '', '', 1519974382, 1519974382, 0, '', ''),)</msg>
+<status status="PASS" starttime="20180309 12:25:11.830" endtime="20180309 12:25:11.833"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>id:kw</arg>
-<arg>${search_key}</arg>
+<arg>${result}</arg>
 </arguments>
-<msg timestamp="20180110 11:42:13.228" level="INFO">Typing text 'robot framework' into text field 'id:kw'.</msg>
-<status status="PASS" starttime="20180110 11:42:13.227" endtime="20180110 11:42:13.546"></status>
+<msg timestamp="20180309 12:25:11.833" level="INFO">((624275, '韩志超(先生)', '', '18010181267', '', 3, '', '', '', 0, 3, '', '', '', 1519974382, 1519974382, 0, '', ''),)</msg>
+<status status="PASS" starttime="20180309 12:25:11.833" endtime="20180309 12:25:11.833"></status>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>id:su</arg>
-</arguments>
-<msg timestamp="20180110 11:42:13.547" level="INFO">Clicking button 'id:su'.</msg>
-<status status="PASS" starttime="20180110 11:42:13.546" endtime="20180110 11:42:13.682"></status>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<doc>Evaluates the given expression in Python and returns the results.</doc>
-<arguments>
-<arg>time.sleep(2)</arg>
-<arg>time</arg>
-</arguments>
-<status status="PASS" starttime="20180110 11:42:13.682" endtime="20180110 11:42:15.684"></status>
-</kw>
-<kw name="Get Title" library="SeleniumLibrary">
-<doc>Returns the title of current page.</doc>
-<assign>
-<var>${title}</var>
-</assign>
-<msg timestamp="20180110 11:42:15.706" level="INFO">${title} = robot framework_百度搜索</msg>
-<status status="PASS" starttime="20180110 11:42:15.685" endtime="20180110 11:42:15.707"></status>
-</kw>
-<msg timestamp="20180110 11:42:15.708" level="INFO">${title} = robot framework_百度搜索</msg>
-<status status="PASS" starttime="20180110 11:42:13.226" endtime="20180110 11:42:15.708"></status>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<arguments>
-<arg>${title}</arg>
-<arg>robot framework_百度搜索</arg>
-</arguments>
-<status status="PASS" starttime="20180110 11:42:15.709" endtime="20180110 11:42:15.710"></status>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20180110 11:42:15.710" endtime="20180110 11:42:18.918"></status>
-</kw>
-<status status="PASS" starttime="20180110 11:42:07.640" endtime="20180110 11:42:18.919" critical="yes"></status>
+<status status="PASS" starttime="20180309 12:25:11.801" endtime="20180309 12:25:11.833" critical="yes"></status>
 </test>
-<test id="s1-t2" name="case2">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the given ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20180110 11:42:18.923" level="INFO">Opening browser 'Chrome' to base url 'http://www.baidu.com'.</msg>
-<status status="PASS" starttime="20180110 11:42:18.922" endtime="20180110 11:42:23.695"></status>
-</kw>
-<kw name="Baidu Search">
-<arguments>
-<arg>selenium</arg>
-</arguments>
-<assign>
-<var>${title}</var>
-</assign>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:kw</arg>
-<arg>${search_key}</arg>
-</arguments>
-<msg timestamp="20180110 11:42:23.699" level="INFO">Typing text 'selenium' into text field 'id:kw'.</msg>
-<status status="PASS" starttime="20180110 11:42:23.698" endtime="20180110 11:42:23.946"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>id:su</arg>
-</arguments>
-<msg timestamp="20180110 11:42:23.947" level="INFO">Clicking button 'id:su'.</msg>
-<status status="PASS" starttime="20180110 11:42:23.946" endtime="20180110 11:42:24.048"></status>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<doc>Evaluates the given expression in Python and returns the results.</doc>
-<arguments>
-<arg>time.sleep(2)</arg>
-<arg>time</arg>
-</arguments>
-<status status="PASS" starttime="20180110 11:42:24.048" endtime="20180110 11:42:26.050"></status>
-</kw>
-<kw name="Get Title" library="SeleniumLibrary">
-<doc>Returns the title of current page.</doc>
-<assign>
-<var>${title}</var>
-</assign>
-<msg timestamp="20180110 11:42:26.075" level="INFO">${title} = selenium_百度搜索</msg>
-<status status="PASS" starttime="20180110 11:42:26.050" endtime="20180110 11:42:26.076"></status>
-</kw>
-<msg timestamp="20180110 11:42:26.077" level="INFO">${title} = selenium_百度搜索</msg>
-<status status="PASS" starttime="20180110 11:42:23.696" endtime="20180110 11:42:26.077"></status>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<arguments>
-<arg>${title}</arg>
-<arg>selenium_百度搜索</arg>
-</arguments>
-<status status="PASS" starttime="20180110 11:42:26.078" endtime="20180110 11:42:26.079"></status>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20180110 11:42:26.080" endtime="20180110 11:42:29.260"></status>
-</kw>
-<status status="PASS" starttime="20180110 11:42:18.921" endtime="20180110 11:42:29.260" critical="yes"></status>
-</test>
-<doc>Simple examle using SeleniumLibrary</doc>
-<status status="PASS" starttime="20180110 11:42:07.513" endtime="20180110 11:42:29.264"></status>
+<status status="PASS" starttime="20180309 12:25:11.764" endtime="20180309 12:25:11.834"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0">Critical Tests</stat>
-<stat pass="2" fail="0">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" id="s1" name="Baidu Search">Baidu Search</stat>
+<stat pass="1" fail="0" id="s1" name="Test Mysql">Test Mysql</stat>
 </suite>
 </statistics>
 <errors>
